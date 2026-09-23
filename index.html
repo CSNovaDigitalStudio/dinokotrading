@@ -1,245 +1,375 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dinoko Trading and Projects | Custom Design & Tailoring Johannesburg</title>
-  <meta name="description" content="Dinoko Trading and Projects offers custom clothing design, tailoring, uniforms, branded wear, formal and traditional outfits in Johannesburg. Delivery available." />
-  <meta name="theme-color" content="#0c2344" />
-  <meta property="og:title" content="Dinoko Trading and Projects | Design & Tailoring" />
-  <meta property="og:description" content="Custom clothing, uniforms, branded wear and made-to-order tailoring in Johannesburg. Delivery available." />
-  <meta property="og:type" content="website" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dinoko Trading and Projects | Couture & School Uniform Collection</title>
+  <meta name="description" content="Dinoko Trading and Projects creates elegant custom dresses, gowns, traditional wear and school uniforms in Johannesburg with delivery available." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header" id="top">
-    <div class="container nav-wrap">
-      <a class="brand" href="#top" aria-label="Dinoko Trading and Projects home">
-        <span class="brand-mark">D</span>
-        <span class="brand-text"><strong>Dinoko</strong><small>Trading and Projects</small></span>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#top" class="brand" aria-label="Dinoko homepage">
+        <span class="brand-crown">♛</span>
+        <span class="brand-text">
+          <span class="brand-name">DINOKO</span>
+          <span class="brand-sub">TRADING AND PROJECTS</span>
+        </span>
       </a>
 
-      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
+      <label class="search-box" aria-label="Search dresses, gowns and uniforms">
+        <span class="search-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 3a7.5 7.5 0 1 0 4.74 13.31l4.22 4.22 1.06-1.06-4.22-4.22A7.5 7.5 0 0 0 10.5 3Zm0 1.5a6 6 0 1 1 0 12 6 6 0 0 1 0-12Z"/></svg>
+        </span>
+        <input id="searchInput" type="search" placeholder="Search dresses, gowns and uniforms" />
+      </label>
 
-      <nav class="main-nav" id="main-nav" aria-label="Primary navigation">
-        <a href="#services">Services</a>
-        <a href="#craft">Our Craft</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
-        <a class="nav-cta" href="https://wa.me/2784179099?text=Hi%20Dinoko%20Trading%20and%20Projects,%20I%20would%20like%20a%20quote." target="_blank" rel="noopener">WhatsApp Us</a>
-      </nav>
+      <div class="header-icons" aria-label="Header actions">
+        <a href="#contact" class="icon-link" title="Account">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4.5 4.5 0 1 0-4.5-4.5A4.51 4.51 0 0 0 12 12Zm0-7.5A3 3 0 1 1 9 7.5a3 3 0 0 1 3-3ZM4 20.25h1.5a6.5 6.5 0 0 1 13 0H20a8 8 0 0 0-16 0Z"/></svg>
+        </a>
+        <button class="icon-link heart-toggle" type="button" id="wishlistToggle" title="Wishlist">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.3 10.55 19C5.4 14.36 2 11.28 2 7.5A4.5 4.5 0 0 1 6.5 3 4.9 4.9 0 0 1 12 6.15 4.9 4.9 0 0 1 17.5 3 4.5 4.5 0 0 1 22 7.5c0 3.78-3.4 6.86-8.55 11.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="bag-link" type="button" id="bagButton" title="Bag">
+          <span class="bag-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7V6a5 5 0 0 1 10 0v1h3l-1.1 13H5.1L4 7Zm1.5 0h7V6a3.5 3.5 0 0 0-7 0Z"/></svg>
+          </span>
+          <span>Bag (<b id="bagCount">0</b>)</span>
+        </button>
+      </div>
+
+      <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-label="Toggle navigation">☰</button>
     </div>
+
+    <nav class="main-nav" id="mainNav">
+      <div class="container nav-inner">
+        <button type="button" class="nav-filter active" data-filter="all">Shop All</button>
+        <button type="button" class="nav-filter" data-filter="traditional">Traditional Wear</button>
+        <button type="button" class="nav-filter" data-filter="occasion">Occasion Dresses</button>
+        <button type="button" class="nav-filter" data-filter="gowns">Gowns</button>
+        <button type="button" class="nav-filter" data-filter="uniforms">Uniforms</button>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
   </header>
 
-  <main id="main">
+  <main id="top">
     <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <p class="eyebrow">DESIGN • TAILORING • CUSTOM ORDERS</p>
-          <h1>Clothing made to <span>stand out.</span></h1>
-          <p class="hero-lead">From statement dresses and traditional wear to uniforms, jackets and branded apparel — Dinoko turns ideas into clothing people notice.</p>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>Colour. Culture.<br><em>Confidence.</em></h1>
+          <p>Statement designs for life’s most unforgettable moments.</p>
+          <a class="cta-button" href="#collection">Shop the Collection <span>→</span></a>
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/2784179099?text=Hi%20Dinoko,%20I%20would%20like%20to%20place%20a%20custom%20order." target="_blank" rel="noopener">Start a Custom Order</a>
-            <a class="btn btn-ghost" href="#gallery">See Our Work</a>
-          </div>
-
-          <div class="quick-points" aria-label="Highlights">
-            <div><strong>Johannesburg</strong><span>Market &amp; Delvers</span></div>
-            <div><strong>Delivery</strong><span>Available</span></div>
-            <div><strong>Custom-made</strong><span>Made for your needs</span></div>
+          <div class="hero-highlights">
+            <div>
+              <span>◇</span>
+              <small>BOLD<br>STYLE</small>
+            </div>
+            <div>
+              <span>♡</span>
+              <small>SPECIAL<br>OCCASIONS</small>
+            </div>
+            <div>
+              <span>☆</span>
+              <small>TIMELESS<br>BEAUTY</small>
+            </div>
           </div>
         </div>
 
-        <div class="hero-visual reveal" aria-label="Featured Dinoko tailoring work">
-          <div class="hero-photo-wrap">
-            <img src="assets/web/0083.webp" alt="Royal blue custom formal gown by Dinoko Trading and Projects" class="hero-photo" />
-            <div class="floating-card top-card">Statement pieces<br><strong>made with detail</strong></div>
-            <div class="floating-card bottom-card"><span>Custom Design</span><span>Tailoring</span><span>Branded Wear</span></div>
+        <div class="hero-visual">
+          <div class="gold-arch"></div>
+          <img src="assets/royal-blue-gown.png" alt="Royal blue statement gown" class="hero-dress" />
+          <div class="hero-note">MORE<br>THAN<br>FASHION<br>IT'S YOU</div>
+          <div class="hero-vase">
+            <div class="vase-flowers"></div>
+            <div class="vase-body"></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="trust-bar" aria-label="Dinoko service highlights">
-      <div class="container trust-grid">
-        <span>✦ Custom clothing</span>
-        <span>✦ Formal &amp; traditional wear</span>
-        <span>✦ Uniforms &amp; group orders</span>
-        <span>✦ Branded apparel</span>
+    <section id="collection" class="collection">
+      <div class="container section-top">
+        <button class="filter-button" type="button" id="filterToggle">
+          <span>☷</span> Filter
+        </button>
+        <div class="section-heading">
+          <span class="line"></span>
+          <div>
+            <h2>Shop the Collection</h2>
+            <p>BEAUTY IN EVERY DETAIL</p>
+          </div>
+          <span class="line"></span>
+        </div>
+        <label class="sort-select">
+          <span>Sort: Featured</span>
+          <select id="sortSelect" aria-label="Sort products">
+            <option value="featured">Featured</option>
+            <option value="name">Name A–Z</option>
+          </select>
+        </label>
       </div>
+
+      <div class="container filter-panel" id="filterPanel" hidden>
+        <button type="button" class="mini-filter active" data-filter="all">All</button>
+        <button type="button" class="mini-filter" data-filter="traditional">Traditional Wear</button>
+        <button type="button" class="mini-filter" data-filter="occasion">Occasion Dresses</button>
+        <button type="button" class="mini-filter" data-filter="gowns">Gowns</button>
+        <button type="button" class="mini-filter" data-filter="uniforms">Uniforms</button>
+      </div>
+
+      <div class="container product-grid" id="productGrid">
+        <article class="product-card" data-name="Royal Blue Statement Gown" data-category="gowns occasion">
+          <button class="product-heart" type="button" aria-label="Add Royal Blue Statement Gown to wishlist">♡</button>
+          <img src="assets/royal-blue-gown.png" alt="Royal Blue Statement Gown" loading="lazy" />
+          <span class="product-category">Gowns</span>
+          <h3>Royal Blue Statement Gown</h3>
+          <p>Price on request</p>
+          <button class="product-btn" type="button" data-product="Royal Blue Statement Gown">Select Options</button>
+        </article>
+
+        <article class="product-card" data-name="Red Statement Mermaid Gown" data-category="gowns occasion">
+          <button class="product-heart" type="button" aria-label="Add Red Statement Mermaid Gown to wishlist">♡</button>
+          <img src="assets/red-statement-gown.png" alt="Red Statement Mermaid Gown" loading="lazy" />
+          <span class="product-category">Gowns</span>
+          <h3>Red Statement Mermaid Gown</h3>
+          <p>Price on request</p>
+          <button class="product-btn" type="button" data-product="Red Statement Mermaid Gown">Select Options</button>
+        </article>
+
+        <article class="product-card" data-name="Champagne Mermaid Gown" data-category="gowns occasion">
+          <button class="product-heart" type="button" aria-label="Add Champagne Mermaid Gown to wishlist">♡</button>
+          <img src="assets/champagne-gown.png" alt="Champagne Mermaid Gown" loading="lazy" />
+          <span class="product-category">Gowns</span>
+          <h3>Champagne Mermaid Gown</h3>
+          <p>Price on request</p>
+          <button class="product-btn" type="button" data-product="Champagne Mermaid Gown">Select Options</button>
+        </article>
+
+        <article class="product-card" data-name="Orange Mermaid Gown" data-category="gowns traditional">
+          <button class="product-heart" type="button" aria-label="Add Orange Mermaid Gown to wishlist">♡</button>
+          <img src="assets/orange-mermaid-gown.png" alt="Orange Mermaid Gown" loading="lazy" />
+          <span class="product-category">Gowns</span>
+          <h3>Orange Mermaid Gown</h3>
+          <p>Price on request</p>
+          <button class="product-btn" type="button" data-product="Orange Mermaid Gown">Select Options</button>
+        </article>
+
+        <article class="product-card" data-name="Orange Traditional Ruffle Gown" data-category="traditional gowns">
+          <button class="product-heart" type="button" aria-label="Add Orange Traditional Ruffle Gown to wishlist">♡</button>
+          <img src="assets/orange-ruffle-gown.png" alt="Orange Traditional Ruffle Gown" loading="lazy" />
+          <span class="product-category">Traditional Wear</span>
+          <h3>Orange Traditional Ruffle Gown</h3>
+          <p>Price on request</p>
+          <button class="product-btn" type="button" data-product="Orange Traditional Ruffle Gown">Select Options</button>
+        </article>
+
+        <article class="product-card" data-name="Pink &amp; Blue Traditional Gown" data-category="traditional gowns">
+          <button class="product-heart" type="button" aria-label="Add Pink &amp; Blue Traditional Gown to wishlist">♡</button>
+          <img src="assets/pink-blue-traditional-gown.png" alt="Pink &amp; Blue Traditional Gown" loading="lazy" />
+          <span class="product-category">Traditional Wear</span>
+          <h3>Pink &amp; Blue Traditional Gown</h3>
+          <p>Price on request</p>
+          <button class="product-btn" type="button" data-product="Pink &amp; Blue Traditional Gown">Select Options</button>
+        </article>
+
+        <article class="product-card" data-name="Burgundy &amp; Ivory Traditional Set" data-category="traditional">
+          <button class="product-heart" type="button" aria-label="Add Burgundy &amp; Ivory Traditional Set to wishlist">♡</button>
+          <img src="assets/burgundy-ivory-set.png" alt="Burgundy &amp; Ivory Traditional Set" loading="lazy" />
+          <span class="product-category">Traditional Wear</span>
+          <h3>Burgundy &amp; Ivory Traditional Set</h3>
+          <p>Price on request</p>
+          <button class="product-btn" type="button" data-product="Burgundy &amp; Ivory Traditional Set">Select Options</button>
+        </article>
+
+        <article class="product-card" data-name="Men's Beige Traditional Shirt" data-category="traditional">
+          <button class="product-heart" type="button" aria-label="Add Men's Beige Traditional Shirt to wishlist">♡</button>
+          <img src="assets/mens-beige-traditional-shirt.png" alt="Men's Beige Traditional Shirt" loading="lazy" />
+          <span class="product-category">Traditional Wear</span>
+          <h3>Men's Beige Traditional Shirt</h3>
+          <p>Price on request</p>
+          <button class="product-btn" type="button" data-product="Men's Beige Traditional Shirt">Select Options</button>
+        </article>
+
+        <article class="product-card" data-name="Emerald Occasion Dress" data-category="occasion">
+          <button class="product-heart" type="button" aria-label="Add Emerald Occasion Dress to wishlist">♡</button>
+          <img src="assets/emerald-dress.png" alt="Emerald Occasion Dress" loading="lazy" />
+          <span class="product-category">Occasion Dresses</span>
+          <h3>Emerald Occasion Dress</h3>
+          <p>Price on request</p>
+          <button class="product-btn" type="button" data-product="Emerald Occasion Dress">Select Options</button>
+        </article>
+
+        <article class="product-card" data-name="Blue Floral Wrap Dress" data-category="occasion">
+          <button class="product-heart" type="button" aria-label="Add Blue Floral Wrap Dress to wishlist">♡</button>
+          <img src="assets/blue-floral-wrap-dress.png" alt="Blue Floral Wrap Dress" loading="lazy" />
+          <span class="product-category">Occasion Dresses</span>
+          <h3>Blue Floral Wrap Dress</h3>
+          <p>Price on request</p>
+          <button class="product-btn" type="button" data-product="Blue Floral Wrap Dress">Select Options</button>
+        </article>
+
+        <article class="product-card" data-name="Champagne Print Occasion Dress" data-category="occasion traditional">
+          <button class="product-heart" type="button" aria-label="Add Champagne Print Occasion Dress to wishlist">♡</button>
+          <img src="assets/champagne-print-occasion-dress.png" alt="Champagne Print Occasion Dress" loading="lazy" />
+          <span class="product-category">Occasion Dresses</span>
+          <h3>Champagne Print Occasion Dress</h3>
+          <p>Price on request</p>
+          <button class="product-btn" type="button" data-product="Champagne Print Occasion Dress">Select Options</button>
+        </article>
+
+        <article class="product-card" data-name="Custom Branded Wrap Dress" data-category="occasion">
+          <button class="product-heart" type="button" aria-label="Add Custom Branded Wrap Dress to wishlist">♡</button>
+          <img src="assets/custom-branded-wrap-dress.png" alt="Custom Branded Wrap Dress" loading="lazy" />
+          <span class="product-category">Occasion Dresses</span>
+          <h3>Custom Branded Wrap Dress</h3>
+          <p>Price on request</p>
+          <button class="product-btn" type="button" data-product="Custom Branded Wrap Dress">Select Options</button>
+        </article>
+
+        <article class="product-card" data-name="Blue &amp; White Uniform Dress" data-category="uniforms">
+          <button class="product-heart" type="button" aria-label="Add Blue &amp; White Uniform Dress to wishlist">♡</button>
+          <img src="assets/blue-white-uniform-dress.png" alt="Blue &amp; White Uniform Dress" loading="lazy" />
+          <span class="product-category">Uniforms</span>
+          <h3>Blue &amp; White Uniform Dress</h3>
+          <p>Price on request</p>
+          <button class="product-btn" type="button" data-product="Blue &amp; White Uniform Dress">Select Options</button>
+        </article>
+
+        <article class="product-card" data-name="St. J Band Uniform Dress" data-category="uniforms">
+          <button class="product-heart" type="button" aria-label="Add St. J Band Uniform Dress to wishlist">♡</button>
+          <img src="assets/stj-band-uniform-dress.png" alt="St. J Band Uniform Dress" loading="lazy" />
+          <span class="product-category">Uniforms</span>
+          <h3>St. J Band Uniform Dress</h3>
+          <p>Price on request</p>
+          <button class="product-btn" type="button" data-product="St. J Band Uniform Dress">Select Options</button>
+        </article>
+
+        <article class="product-card" data-name="School Winter Uniform Set" data-category="uniforms">
+          <button class="product-heart" type="button" aria-label="Add School Winter Uniform Set to wishlist">♡</button>
+          <img src="assets/school-winter-uniform-set.png" alt="School Winter Uniform Set" loading="lazy" />
+          <span class="product-category">Uniforms</span>
+          <h3>School Winter Uniform Set</h3>
+          <p>Price on request</p>
+          <button class="product-btn" type="button" data-product="School Winter Uniform Set">Select Options</button>
+        </article>
+
+        <article class="product-card" data-name="Royal Blue School Cardigan" data-category="uniforms">
+          <button class="product-heart" type="button" aria-label="Add Royal Blue School Cardigan to wishlist">♡</button>
+          <img src="assets/royal-blue-school-cardigan.png" alt="Royal Blue School Cardigan" loading="lazy" />
+          <span class="product-category">Uniforms</span>
+          <h3>Royal Blue School Cardigan</h3>
+          <p>Price on request</p>
+          <button class="product-btn" type="button" data-product="Royal Blue School Cardigan">Select Options</button>
+        </article>
+
+        <article class="product-card" data-name="Navy &amp; Gold School Tracksuit" data-category="uniforms">
+          <button class="product-heart" type="button" aria-label="Add Navy &amp; Gold School Tracksuit to wishlist">♡</button>
+          <img src="assets/navy-gold-school-tracksuit.png" alt="Navy &amp; Gold School Tracksuit" loading="lazy" />
+          <span class="product-category">Uniforms</span>
+          <h3>Navy &amp; Gold School Tracksuit</h3>
+          <p>Price on request</p>
+          <button class="product-btn" type="button" data-product="Navy &amp; Gold School Tracksuit">Select Options</button>
+        </article>
+
+        <article class="product-card" data-name="Yellow &amp; Navy School Uniform" data-category="uniforms">
+          <button class="product-heart" type="button" aria-label="Add Yellow &amp; Navy School Uniform to wishlist">♡</button>
+          <img src="assets/yellow-navy-school-uniform.png" alt="Yellow &amp; Navy School Uniform" loading="lazy" />
+          <span class="product-category">Uniforms</span>
+          <h3>Yellow &amp; Navy School Uniform</h3>
+          <p>Price on request</p>
+          <button class="product-btn" type="button" data-product="Yellow &amp; Navy School Uniform">Select Options</button>
+        </article>
+      </div>
+
+      <p class="no-results container" id="noResults" hidden>No designs matched your search.</p>
     </section>
 
-    <section class="section services" id="services">
-      <div class="container">
-        <div class="section-heading reveal">
-          <p class="eyebrow">WHAT WE MAKE</p>
-          <h2>Your idea. Our hands. <span>Your look.</span></h2>
-          <p>Dinoko offers versatile tailoring for individuals, groups, schools, churches, teams and businesses.</p>
+    <section class="container lower-panels">
+      <div class="explore-panel">
+        <div class="panel-title">
+          <h2>More to Explore</h2>
+          <span></span>
         </div>
+        <p class="panel-subtitle">DISCOVER MORE BEAUTIFUL DESIGNS</p>
 
-        <div class="service-grid">
-          <article class="service-card reveal">
-            <img src="assets/web/0040.webp" alt="Peach custom formal gown" />
-            <div class="service-overlay"><h3>Custom Dresses &amp; Formal Wear</h3><p>Made-to-order pieces for special occasions, celebrations and standout moments.</p></div>
+        <div class="mini-grid">
+          <article class="mini-card">
+            <img src="assets/yellow-navy-school-uniform.png" alt="Yellow and Navy School Uniform" loading="lazy" />
+            <div>
+              <h3>School Uniforms</h3>
+              <p>Custom sets &amp; branded options</p>
+              <button type="button" class="product-btn small" data-product="Yellow &amp; Navy School Uniform">Select Options</button>
+            </div>
           </article>
-          <article class="service-card reveal">
-            <img src="assets/web/0011.webp" alt="Orange traditional dress" />
-            <div class="service-overlay"><h3>Traditional &amp; Occasion Wear</h3><p>Bold colour, print and detail brought together in expressive tailored designs.</p></div>
-          </article>
-          <article class="service-card reveal">
-            <img src="assets/web/0051.webp" alt="Blue and white tailored uniform" />
-            <div class="service-overlay"><h3>Uniforms &amp; Group Orders</h3><p>Coordinated clothing for schools, churches, teams and organised groups.</p></div>
-          </article>
-          <article class="service-card reveal">
-            <img src="assets/web/0113.webp" alt="Custom branded red and black jacket" />
-            <div class="service-overlay"><h3>Branded Wear &amp; Jackets</h3><p>Customised outerwear, teamwear and branded garments with a professional finish.</p></div>
+
+          <article class="mini-card">
+            <img src="assets/pink-blue-traditional-gown.png" alt="Pink and Blue Traditional Gown" loading="lazy" />
+            <div>
+              <h3>Traditional Wear</h3>
+              <p>Custom statement designs</p>
+              <button type="button" class="product-btn small" data-product="Pink &amp; Blue Traditional Gown">Select Options</button>
+            </div>
           </article>
         </div>
       </div>
-    </section>
 
-    <section class="section craft" id="craft">
-      <div class="container craft-grid">
-        <div class="craft-images reveal">
-          <img class="craft-main" src="assets/web/0106.webp" alt="Collection of patterned Dinoko dresses" />
-          <img class="craft-small craft-small-one" src="assets/web/0097.webp" alt="Custom blue and green jacket" />
-          <img class="craft-small craft-small-two" src="assets/web/0119.webp" alt="Custom green branded bag" />
+      <div class="help-panel" id="contact">
+        <div>
+          <h2>Need help choosing?</h2>
+          <p>Speak to Dinoko</p>
+          <a class="whatsapp-box" href="https://wa.me/27784179099?text=Hi%20Dinoko,%20I%20would%20like%20to%20ask%20about%20your%20designs." target="_blank" rel="noopener">
+            <span class="wa-icon">◉</span>
+            <strong>Call or WhatsApp:<br>+27 78 417 9099</strong>
+          </a>
+          <small>Contact us for prices, sizes, uniforms and availability.</small>
+          <small>Johannesburg Corner Market and Delvers • Delivery available</small>
         </div>
-
-        <div class="craft-copy reveal">
-          <p class="eyebrow">THE DINOKO DIFFERENCE</p>
-          <h2>More than sewing — <span>real versatility.</span></h2>
-          <p class="intro">The portfolio shows a wide range of work, from detailed gowns and printed outfits to teamwear, jackets, uniforms and accessories. That range lets clients come with different ideas and still find a practical tailoring solution.</p>
-
-          <div class="skill-list">
-            <div class="skill"><span>01</span><div><h3>Custom styling</h3><p>Designs shaped around the look, use and occasion you have in mind.</p></div></div>
-            <div class="skill"><span>02</span><div><h3>Wide garment range</h3><p>Formal wear, traditional pieces, uniforms, jackets, sportswear and branded clothing.</p></div></div>
-            <div class="skill"><span>03</span><div><h3>Group-ready production</h3><p>Matching garments and coordinated sets suitable for teams, organisations and events.</p></div></div>
-            <div class="skill"><span>04</span><div><h3>Delivery available</h3><p>Based in Johannesburg at Market &amp; Delvers, with delivery available for customer convenience.</p></div></div>
-          </div>
-
-          <a class="text-link" href="#contact">Tell us what you want made <span>→</span></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section gallery-section" id="gallery">
-      <div class="container">
-        <div class="section-heading reveal">
-          <p class="eyebrow">PORTFOLIO</p>
-          <h2>See the <span>range of our work.</span></h2>
-          <p>A selection from Dinoko's design and tailoring portfolio.</p>
-        </div>
-
-        <div class="gallery-filters reveal" role="group" aria-label="Filter gallery">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="formal">Formal</button>
-          <button class="filter-btn" data-filter="traditional">Traditional</button>
-          <button class="filter-btn" data-filter="uniform">Uniforms</button>
-          <button class="filter-btn" data-filter="branded">Branded</button>
-        </div>
-
-        <div class="gallery-grid">
-          <button class="gallery-item tall reveal" data-category="formal" data-src="assets/web/0083.webp" aria-label="View royal blue formal gown"><img src="assets/web/0083.webp" alt="Royal blue formal gown" loading="lazy"></button>
-          <button class="gallery-item reveal" data-category="formal" data-src="assets/web/0040.webp" aria-label="View peach formal gown"><img src="assets/web/0040.webp" alt="Peach formal gown" loading="lazy"></button>
-          <button class="gallery-item reveal" data-category="traditional" data-src="assets/web/0011.webp" aria-label="View orange traditional dress"><img src="assets/web/0011.webp" alt="Orange traditional dress" loading="lazy"></button>
-          <button class="gallery-item reveal" data-category="formal" data-src="assets/web/0091.webp" aria-label="View green formal dress"><img src="assets/web/0091.webp" alt="Green formal dress" loading="lazy"></button>
-          <button class="gallery-item wide reveal" data-category="traditional" data-src="assets/web/0106.webp" aria-label="View patterned dress collection"><img src="assets/web/0106.webp" alt="Patterned dress collection" loading="lazy"></button>
-          <button class="gallery-item reveal" data-category="traditional" data-src="assets/web/0123.webp" aria-label="View colourful custom dress"><img src="assets/web/0123.webp" alt="Colourful custom dress" loading="lazy"></button>
-          <button class="gallery-item reveal" data-category="traditional uniform" data-src="assets/web/0093.webp" aria-label="View coordinated printed garments"><img src="assets/web/0093.webp" alt="Coordinated printed garments" loading="lazy"></button>
-          <button class="gallery-item reveal" data-category="uniform" data-src="assets/web/0051.webp" aria-label="View blue and white uniform"><img src="assets/web/0051.webp" alt="Blue and white tailored uniform" loading="lazy"></button>
-          <button class="gallery-item reveal" data-category="uniform branded" data-src="assets/web/0043.webp" aria-label="View tailored purple uniform jacket"><img src="assets/web/0043.webp" alt="Purple tailored uniform jacket" loading="lazy"></button>
-          <button class="gallery-item reveal" data-category="uniform branded" data-src="assets/web/0131.webp" aria-label="View purple tailored jacket"><img src="assets/web/0131.webp" alt="Purple tailored jacket" loading="lazy"></button>
-          <button class="gallery-item wide reveal" data-category="branded" data-src="assets/web/0113.webp" aria-label="View branded jacket"><img src="assets/web/0113.webp" alt="Red and black custom branded jacket" loading="lazy"></button>
-          <button class="gallery-item reveal" data-category="branded" data-src="assets/web/0097.webp" aria-label="View custom puffer jacket"><img src="assets/web/0097.webp" alt="Blue and green custom puffer jacket" loading="lazy"></button>
-          <button class="gallery-item reveal" data-category="branded" data-src="assets/web/0057.webp" aria-label="View black branded jacket"><img src="assets/web/0057.webp" alt="Black custom branded jacket" loading="lazy"></button>
-          <button class="gallery-item reveal" data-category="branded uniform" data-src="assets/web/0071.webp" aria-label="View custom sports jersey"><img src="assets/web/0071.webp" alt="Custom sports jersey" loading="lazy"></button>
-          <button class="gallery-item reveal" data-category="branded" data-src="assets/web/0119.webp" aria-label="View custom branded bag"><img src="assets/web/0119.webp" alt="Custom branded bag" loading="lazy"></button>
-          <button class="gallery-item reveal" data-category="uniform" data-src="assets/web/0039.webp" aria-label="View brown uniform dress"><img src="assets/web/0039.webp" alt="Brown uniform dress" loading="lazy"></button>
-          <button class="gallery-item reveal" data-category="branded uniform" data-src="assets/web/0017.webp" aria-label="View custom sports shirt"><img src="assets/web/0017.webp" alt="Custom sports shirt" loading="lazy"></button>
-          <button class="gallery-item reveal" data-category="uniform branded" data-src="assets/web/0118.webp" aria-label="View coordinated uniform accessories"><img src="assets/web/0118.webp" alt="Coordinated uniform pieces" loading="lazy"></button>
-        </div>
-      </div>
-    </section>
-
-    <section class="section process">
-      <div class="container">
-        <div class="section-heading compact reveal">
-          <p class="eyebrow">HOW TO ORDER</p>
-          <h2>From idea to <span>finished garment.</span></h2>
-        </div>
-        <div class="process-grid">
-          <div class="process-step reveal"><span>1</span><h3>Send your idea</h3><p>Share your reference, garment type, quantity and preferred look on WhatsApp.</p></div>
-          <div class="process-step reveal"><span>2</span><h3>Confirm the details</h3><p>We discuss the design, sizing, branding and other requirements for your order.</p></div>
-          <div class="process-step reveal"><span>3</span><h3>We create</h3><p>Your garment is prepared with attention to the requested design and finish.</p></div>
-          <div class="process-step reveal"><span>4</span><h3>Collect or receive</h3><p>Arrange collection or delivery once your order is ready.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section contact-section" id="contact">
-      <div class="container contact-grid">
-        <div class="contact-copy reveal">
-          <p class="eyebrow light">READY TO ORDER?</p>
-          <h2>Bring your next look <span>to life.</span></h2>
-          <p>Tell us what you need made and we’ll continue the conversation directly on WhatsApp.</p>
-
-          <div class="contact-details">
-            <a href="tel:+27722845495"><span>Call</span><strong>072 284 5495</strong></a>
-            <a href="tel:+27784179099"><span>WhatsApp / Call</span><strong>078 417 9099</strong></a>
-            <div><span>Location</span><strong>Johannesburg, Market &amp; Delvers</strong></div>
-            <div><span>Delivery</span><strong>Available</strong></div>
-          </div>
-        </div>
-
-        <form class="quote-form reveal" id="quote-form">
-          <h3>Request a custom order</h3>
-          <label>What do you need made?
-            <select id="service" required>
-              <option value="">Select a service</option>
-              <option>Custom dress / formal wear</option>
-              <option>Traditional wear</option>
-              <option>Uniform / group order</option>
-              <option>Branded clothing / jacket</option>
-              <option>Sportswear / teamwear</option>
-              <option>Other custom tailoring</option>
-            </select>
-          </label>
-          <label>Your name
-            <input id="name" type="text" placeholder="Your name" required />
-          </label>
-          <label>Tell us a little about the order
-            <textarea id="details" rows="4" placeholder="Example: 5 matching outfits for an event, colours, sizes, date needed..."></textarea>
-          </label>
-          <button class="btn btn-primary full" type="submit">Send Request on WhatsApp</button>
-          <p class="form-note">You’ll be taken to WhatsApp to send your request.</p>
-        </form>
+        <div class="style-copy">Style<br>Speaks<br>Louder</div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="brand footer-brand"><span class="brand-mark">D</span><span class="brand-text"><strong>Dinoko</strong><small>Trading and Projects</small></span></div>
-      <p>Custom design &amp; tailoring • Johannesburg • Delivery available</p>
-      <p class="copyright">© <span id="year"></span> Dinoko Trading and Projects.</p>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="#top" class="brand footer-brand">
+        <span class="brand-crown">♛</span>
+        <span class="brand-text">
+          <span class="brand-name">DINOKO</span>
+          <span class="brand-sub">TRADING AND PROJECTS</span>
+        </span>
+      </a>
+
+      <nav class="footer-nav">
+        <a href="#collection">Shop All</a>
+        <a href="#collection" data-footer-filter="traditional">Traditional Wear</a>
+        <a href="#collection" data-footer-filter="occasion">Occasion Dresses</a>
+        <a href="#collection" data-footer-filter="gowns">Gowns</a>
+        <a href="#collection" data-footer-filter="uniforms">Uniforms</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="footer-note">Website design concept</div>
     </div>
   </footer>
 
-  <a class="floating-whatsapp" href="https://wa.me/2784179099?text=Hi%20Dinoko,%20I%20would%20like%20a%20quote." target="_blank" rel="noopener" aria-label="Chat with Dinoko on WhatsApp">WA</a>
-
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox-close" aria-label="Close image">×</button>
-    <img src="" alt="Dinoko portfolio preview" id="lightbox-image" />
-  </div>
+  <aside class="bag-drawer" id="bagDrawer" aria-hidden="true">
+    <div class="bag-header">
+      <h3>Selected Designs</h3>
+      <button type="button" id="closeBag" aria-label="Close selected designs">×</button>
+    </div>
+    <div class="bag-items" id="bagItems">
+      <p>No designs selected yet.</p>
+    </div>
+    <button type="button" class="send-btn" id="sendEnquiry">Send Enquiry on WhatsApp</button>
+  </aside>
+  <div class="overlay" id="overlay"></div>
 
   <script src="script.js"></script>
 </body>
